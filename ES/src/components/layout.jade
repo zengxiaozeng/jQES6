@@ -1,0 +1,22 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='renderer' content='webkit')
+    meta(name='format-detection' content='telephone=no')
+    meta(http-eqiv='x-ua-compatible' content='IE=edgechrome=1')
+    meta(name="apple-mobile-web-app-title" content="")
+    meta(name="apple-mobile-web-app-capable" content="yes")
+    meta(name="apple-mobile-web-app-status-bar-style" content="black" )
+    meta(name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL")
+    meta(name="format-detection" content="telphone=no, email=no" )
+    block title
+      title 一鼎网 
+    link(href='../../public/css/reset.css' rel='stylesheet')
+    block link
+    script
+      | var scale=window.screen.width/750
+      | 			document.write('<meta name="viewport" content="width=device-widthtarget-densitydpi=device-dpiinitial-scale=' + scale + ' minimum-scale=' + scale + ' maximum-scale=' + scale + ' user-scalable=no"/>')
+    script(src='https://borrowers.youdingkeji.com/staticPages/appJq/common/js/ydw.js')
+  body
+    block content

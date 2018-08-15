@@ -1,0 +1,15 @@
+@charset'utf-8';
+*{margin: 0;padding: 0;box-sizing: border-box;}
+html{font-size: 14px;-webkit-tap-highlight-color: rgba(0,0,0,0);}
+body{font-family: "microsoft yahei","Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;margin: 0 auto;max-width: 750px;}
+img{display:block;border: none;max-width:100%;}
+li{list-style: none;}
+em,i{font-style:normal;}
+input,select,textarea{outline: none;border: none;-webkit-appearance:none;background:none;}
+a{color: #000;text-decoration: none;}
+a,button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);}
+.fl{float: left;}
+.fr{float: right;}
+.container{width: 1000px;margin: 0 auto;}
+.clearfix::after{display: block;content: '.';height: 0;clear: both;visibility: hidden;}
+.TextOver{text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}

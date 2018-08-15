@@ -1,0 +1,279 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+body *{
+    box-sizing:border-box;transition:all ease .2s
+}
+.isStarted{
+    height: 100%;
+}
+.start_loading{
+    height: 100%;
+    width: 100%;
+    background:  #fff;
+    opacity: 1;
+    position: relative;
+    box-shadow: 0 0 35px 0 rgba(200,200,110,.5);
+    transition: all ease .3s;  
+    .loading_div{
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background: url('https://image.youdingkeji.com/H5/activityUpgrades/cm_loading.png') no-repeat center center;
+        /*background-size: 100% 100%;*/
+        animation: loadings 1.2s linear infinite;
+    }
+    @keyframes loadings{
+        from {
+            transform:rotate(0);
+        }
+        to{
+            transform:rotate(360deg);
+        } 
+    }
+}
+.page-wrap {
+    width: 100%;
+    height: 100%;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    background-size: 100% 100% !important;
+    &:nth-child(1) {
+        background: url('../../../public/imgs/reports/bg_01.png');
+    }
+
+    &:nth-child(2) {
+        background: url('../../../public/imgs/reports/bg_02.png');
+        position: relative;
+        .tabs{
+            position: absolute;
+            top: 50%;
+            left: 80px;
+            width: 590px;
+            height: 380px;
+            #title {
+                height: 80px;
+                span {
+                    width:196px; 
+                    height:80px; 
+                    margin-right:1px; 
+                }
+            }
+            #con{
+                padding:25px 73px;
+                div{
+                    display:none; 
+                    width: 444px;
+                    height: 237px;
+                    &:nth-child(1){
+                        background: url('../../../public/imgs/reports/tabs_01.png');
+                    }
+                    &:nth-child(2){
+                        background: url('../../../public/imgs/reports/tabs_02.png');
+                    }
+                    &:nth-child(3){
+                        background: url('../../../public/imgs/reports/tabs_03.png');
+                    }
+                    
+                }
+            }
+            #con div.on {
+                display:block;
+            }
+        }
+    }
+
+    &:nth-child(3) {
+        position: relative;
+        background: url('../../../public/imgs/reports/bg_03.png');
+        .tabs{
+            position: absolute;
+            top: 10%;
+            left: 55px;
+            width: 640px;
+            height: 380px;
+            .page-three-title{
+                height: 80px;
+            }
+            h4 {
+                span {
+                    width:320px; 
+                    height:80px;
+                }
+            }
+            #con{
+                padding:15px 102px;
+                div{
+                    display:none; 
+                    width: 436px;
+                    height: 255px;
+                    &:nth-child(1){
+                        background: url('../../../public/imgs/reports/tabs_05.png');
+                    }
+                    &:nth-child(2){
+                        background: url('../../../public/imgs/reports/tabs_04.png');
+                    }
+                    
+                }
+            }
+            #con div.on {
+                display:block;
+            }
+        }
+    }
+
+    .tabs{
+        background: #2B2F3A;
+        border-radius: 4px;
+        #title {
+            span {
+                font-family: 'PingFangSC-Regular','Microsoft YaHei';
+                font-size: 26px;
+                float:left; 
+                line-height: 80px;
+                color: #2B2F3A; 
+                background: #EAC886; 
+                text-align:center; 
+                cursor:pointer; 
+                &:last-child{
+                    margin-right:0;
+                }
+            }
+        }
+        #title span.on {
+            background:#2F333D; 
+            color:#fff;
+        }
+        #con div.on {
+            display:block;
+        }
+    }
+
+    &:nth-child(4) {
+        background: url('../../../public/imgs/reports/bg_04.png');
+    }
+
+    &:nth-child(5) {
+        background: url('../../../public/imgs/reports/bg_05.png');
+    }
+
+    &:nth-child(6) {
+        background: url('../../../public/imgs/reports/bg_06.png');
+    }
+
+    &:nth-child(7) {
+        background: url('../../../public/imgs/reports/bg_07.png');
+    }
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    padding-top: 40px;
+    color: #000;
+    font-size: 18px;
+    opacity: 0;
+}
+
+.subtitle {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    color: #000;
+    font-size: 16px;
+    opacity: 0;
+}
+
+.arrow{
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    left: 50%;
+    bottom: 20px;
+    margin-left: -25px;
+    background: url(../../../public/imgs/reports/arrow.png) no-repeat;
+    background-size: 100% 100%;
+    opacity: 0;
+}
+
+.arrow-h{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    width: 33px;
+    height: 18px;
+    margin-top: -9px;
+    opacity: 0;
+}
+
+.arrow-h i{
+    display: block;
+    width: 50px;
+    height: 30px;
+    background: url(../../../public/imgs/reports/arrow.png) no-repeat;
+    background-size: 100% 100%;
+    -webkit-transform: rotate(-90deg);
+}
+
+.current .arrow {
+    -webkit-animation: swipeMoveTop 1.5s 1s ease infinite;
+}
+
+.current .arrow-h {
+    -webkit-animation: swipeMoveLeft 1.5s 1s ease infinite;
+}
+
+/*上滑提示*/
+@-webkit-keyframes swipeMoveTop {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 10px, 0);
+    }
+    70% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -10px, 0);
+    }
+}
+
+/*左滑提示*/
+@-webkit-keyframes swipeMoveLeft {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(10px, 0, 0);
+    }
+    70% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translate3d(-10px, 0, 0);
+    }
+}
+
+@-webkit-keyframes slideToTop {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100px, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+}
